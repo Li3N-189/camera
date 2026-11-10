@@ -1,7 +1,34 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+video {
+  position: fixed;
+  object-fit: cover;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+}
+#button {
+  width: 10vh;
+  height: 10vh;
+  background-color: white;
+  position: fixed;
+  border: 1vh solid #888;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px #8888;
+  border-radius: 5vh;
+  bottom: 5vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
+</head>
 <body>
-<video></video>
+<video autoplay playsinline muted></video>
+<div id="button" onclick="takePicture()"></div>
 <script src="main.js"></script>
 </body>
 </html>
