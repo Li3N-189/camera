@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded',() => {
   const userVideo = document.querySelector('video');
-  navigator.mediaDevices.getUserMedia({video: true, audio: false})
+  navigator.mediaDevices.getUserMedia({video: {facingMode : 'environment'}, audio: false})
     .then(stream => {
       userVideo.srcObject = stream;
     })
