@@ -17,10 +17,12 @@ function takePicture() {
   const context = canvas.getContext('2d');
   context.drawImage(video, 0, 0, canvas.width, canvas.height);
   const image = new Image();
-  image.src = canvas.toDataURL('image/png');
-  const a = document.createElement('a');
-  a.download = `picture_${new Date().toISOString()}.png`;
-  a.target = '_blank';
-  a.href = image.src;
-  a.click();
+  canvas.toBlob(blob => {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.download = `picture_${new Date().toISOString()}.png`;
+    a.target = '_blank';
+    a.href = url;
+    a.click();
+  });
 }
